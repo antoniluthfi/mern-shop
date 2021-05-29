@@ -1,6 +1,5 @@
 {
   "expo": {
-    "entryPoint": "./App.js",
     "name": "mern-shop",
     "slug": "mern-shop",
     "version": "1.0.0",

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View } from 'react-native';
-import { Icon } from 'react-native-vector-icons/FontAwesome5';
+// import { View } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+// stack
+import HomeNavigator from './HomeNavigator';
 
 const Tab = createBottomTabNavigator();
 
-const Main = () => {
+function Main() {
 	return (
 		<Tab.Navigator
 			initialRouteName="Home"
@@ -17,10 +20,10 @@ const Main = () => {
 		>
 			<Tab.Screen
 				name="Home"
-				component={}
+				component={HomeNavigator}
 				options={{
 					tabBarIcon: ({ color })	=> (
-						<Icon
+						<FontAwesome5
 							name="home"
 							style={{ position: 'relative' }}
 							color={color}
@@ -32,10 +35,10 @@ const Main = () => {
 
 			<Tab.Screen
 				name="Cart"
-				component={}
+				component={HomeNavigator}
 				options={{
 					tabBarIcon: ({ color })	=> (
-						<Icon
+						<FontAwesome5
 							name="shopping-cart"
 							color={color}
 							size={30}
@@ -46,24 +49,24 @@ const Main = () => {
 
 			<Tab.Screen
 				name="Admin"
-				component={}
+				component={HomeNavigator}
 				options={{
 					tabBarIcon: ({ color })	=> (
-						<Icon
+						<FontAwesome5
 							name="cog"
 							color={color}
 							size={30}
 						/>
-					)				
+					)	
 				}}				
 			/>
 
 			<Tab.Screen
 				name="User"
-				component={}
+				component={HomeNavigator}
 				options={{
 					tabBarIcon: ({ color })	=> (
-						<Icon
+						<FontAwesome5
 							name="user"
 							color={color}
 							size={30}

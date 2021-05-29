@@ -10,9 +10,7 @@ import CategoryFilter from './CategoryFilter';
 const productData = require('../../assets/products.json');
 const categoryData = require('../../assets/categories.json');
 
-const { height } = Dimensions.get("window");
-
-const ProductContainer = () => {
+const ProductContainer = (props) => {
     const [product, setProduct] = useState([]);
     const [filteredProduct, setFilteredProduct] = useState([]);
     const [focus, setFocus] = useState(false);
@@ -47,7 +45,7 @@ const ProductContainer = () => {
     const changeCategory = (category) => {
         category === 'all' ? 
             [
-                setProductCategories(initialState), 
+                setProductCategories(product), 
                 setActive(true)
             ] : 
             [
@@ -97,6 +95,7 @@ const ProductContainer = () => {
                                     <ProductList 
                                         key={item._id.$oid}
                                         item={item}
+                                        navigation={props.navigation}
                                     />
                                 ))}
                             </View>
